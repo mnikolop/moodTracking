@@ -3,7 +3,7 @@ import {Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
 
 
 
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-          <Link to="/Form">
+          <Link to="/form">
             <Button variant="primary">Add your own data here!</Button>
           </Link>
       </header>

@@ -7,7 +7,7 @@ import Contact from "./Contact";
 import Review from "./Review";
 import Submit from "./Submit";
 
-import "./form.css";
+import "./styles/Form.css";
 
 const steps = [
   { id: "names" },

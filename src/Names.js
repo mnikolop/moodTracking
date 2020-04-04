@@ -1,6 +1,9 @@
 import React from "react";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import logo from './logo.svg';
 import ItemForm from "./ItemForm";
+import './styles/Form.css'
 
 const Names = ({ setForm, formData, navigation }) => {
   const { firstName, lastName, nickName } = formData;
@@ -9,11 +12,7 @@ const Names = ({ setForm, formData, navigation }) => {
 
   return (
     <div className="form">
-      <img
-        src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/52013919/original/6d1a3ad91335506330189dafa780af958fd03f50/draw-you-a-cute-drawing-in-my-style.jpg"
-        alt="img"
-        className="imageCover"
-      />
+      <img src={logo} className="App-logo" alt="logo" />
       <ItemForm
         label="First Name"
         name="firstName"
@@ -33,7 +32,7 @@ const Names = ({ setForm, formData, navigation }) => {
         onChange={setForm}
       />
       <div>
-        <button onClick={next}>Next</button>
+        <Button onClick={next}>Next</Button>
       </div>
     </div>
   );

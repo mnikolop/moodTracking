@@ -1,18 +1,23 @@
-import React from "react";
+import React from 'react';
+import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import MultiStepForm from "./MultiStepForm";
 
 import logo from './logo.svg';
-import './App.css';
+// import './Form.css';
 
 
-function form() {
-
+function Form() {
     return (
-        <div>
-            <p>This is the second page.</p>
+      <div className="app">
+        <div className="wrapper">
+          <MultiStepForm />
         </div>
+      </div>
     );
+  }
+  
+  export default Form;
 
-}
-
-export default form;
+  

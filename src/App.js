@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-          <Link to="/form">
+          <Link to="/Form">
             <Button variant="primary">Add your own data here!</Button>
           </Link>
       </header>

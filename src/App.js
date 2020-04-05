@@ -21,7 +21,7 @@ function App() {
           </p>
           <Alert variant='danger'> If you are feeling sick contact your doctor, 1177, <a href='https://1177.se/'>1177.se</a> or do the self exam at <a href='https://corona.sll.se/'>corona.sll.se</a>. </Alert>
         </div>
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={ require('./report.png') } />
           <Link to="/form">
             <Button variant="primary">Add your own data here!</Button>
           </Link>

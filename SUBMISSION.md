@@ -40,14 +40,14 @@ These criteria apply: Realisability, Benefit for society, Scalability, Comprehen
 # 4 Action Plan
 > What are your action points to make this realisable within 2 months. What are the steps you will take (in chronological order) to make this happen? The more details the better.
 
-- Week 1: Finalize technical solution and 
-- Week 2:
-- Week 3:
-- Week 4:
-- Week 5:
-- Week 6:
-- Week 7:
-- Week 8:
+- Week 1: Finalize technical solution and go live.
+- Week 2: Collect data and make start formulating questions for well-being measurement.
+- Week 3: Continue measuring symptoms and start rolling out well-being questions.
+- Week 4: Combine data and get more accurate statistics.
+- Week 5: Contact relevant authorities with the data.
+- Week 6: Try to roll out solutions.
+- Week 7: Already in place.
+- Week 8: Already in place.
 
 > Evaluation criteria   
 These criteria apply: Realisability, Comprehensibility.
@@ -72,3 +72,4 @@ This criteria apply: Execution
 
 # 8. Team Contact Info
 > Name, email and phone number to all team members.
+Markella Nikolopoulou-Themeli, markella.nikolopoulou-themeli@arbetsformedlingen.se. 0762943098

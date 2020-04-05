@@ -11,7 +11,7 @@ class Success extends Component {
 
             <div>
                 <h1 className="ui centered">Thank you for contributing!</h1>
-                <Link to="/form">
+                <Link to="/">
                     <Button variant="primary">Add your own data here!</Button>
                 </Link>            
             </div>

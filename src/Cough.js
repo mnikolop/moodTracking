@@ -16,8 +16,8 @@ class Cough extends Component{
 }
 
   render(){
-      const { values } = this.props;
-      return(
+    const { values } = this.props;
+    return(
           <Form >
               <h1 className="ui centered">Har du nyligen börjat hosta?</h1>
               <Form.Dropdown value={values.cough} onChange={this.props.handleChange('cough')}>

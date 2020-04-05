@@ -20,7 +20,7 @@ class AgeGroup extends Component{
       const { values } = this.props;
       return(
           <Form >
-              <h1 className="ui centered">Have you been in contact?</h1>
+              <h1 className="ui centered">Hur gammal är du?</h1>
               <Form.Dropdown value={values.contact} onChange={this.props.handleChange('contact')}>
                 <select >
                 <option value="--">--</option>

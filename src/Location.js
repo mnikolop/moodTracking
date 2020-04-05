@@ -22,7 +22,7 @@ class Location extends Component {
                 <h1 className="ui centered">Ange din plats (kommun)</h1>
                 <Form.Field >
                     <input
-                        placeholder='Kommun'
+                        placeholder='kommun'
                         onChange={this.props.handleChange('location')}
                         defaultValue={values.location}
                     />

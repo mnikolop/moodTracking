@@ -20,7 +20,7 @@ class AtRisk extends Component{
       const { values } = this.props;
       return(
           <Form >
-              <h1 className="ui centered">Do you have any illness?</h1>
+              <h1 className="ui centered">Har du någon av följande sjukdomar med pågående behandling? Du kan välja flera alternativ.</h1>
               {/* TODO Make this multiselect, probably add the responce to the array each time it is selected */}
               <Form.Dropdown value={values.atRisk} onChange={this.props.handleChange('atRisk')}>
                 <select >

@@ -10,6 +10,7 @@ import Contact from "./Contact"
 import AtRisk from "./AtRisk"
 import Immune from "./Immune"
 import AgeGroup from "./AgeGroup"
+import Location from "./Location"
 
 
 import "./resources/Form.css";
@@ -24,7 +25,8 @@ class MainForm extends Component {
       contact: 'NA', 
       atRisk: ['NA'], 
       immune: 'NA', 
-      ageGroup: 'NA'
+      ageGroup: 'NA',
+      location: 'NA'
     }
 
   nextStep = () => {
@@ -59,8 +61,8 @@ class MainForm extends Component {
 
   render(){
       const {step} = this.state;
-      const { temperature, cough, breathing, energy, contact, atRisk, immune, ageGroup } = this.state;
-      const values = {  temperature, cough, breathing, energy, contact, atRisk, immune, ageGroup  };
+      const { temperature, cough, breathing, energy, contact, atRisk, immune, ageGroup, location } = this.state;
+      const values = {  temperature, cough, breathing, energy, contact, atRisk, immune, ageGroup, location  };
       switch(step) {
       case 1:
           return <Temperature
@@ -120,13 +122,20 @@ class MainForm extends Component {
                   values={values}
                   />
       case 9:
-        return <Review
+        return <Location
                   nextStep={this.nextStep}
                   prevStep={this.prevStep}
                   handleChange = {this.handleChange}
                   values={values}
                   />
       case 10:
+        return <Review
+                  nextStep={this.nextStep}
+                  prevStep={this.prevStep}
+                  handleChange = {this.handleChange}
+                  values={values}
+                  />
+      case 11:
           return <Success />
       }
   }

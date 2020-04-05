@@ -21,7 +21,7 @@ class Confirmation extends Component{
 
 
     render(){
-        const {values: { temperature, cough, breathing, energy, contact, atRisk, immune, ageGroup }} = this.props;
+        const {values: { temperature, cough, breathing, energy, contact, atRisk, immune, ageGroup, location }} = this.props;
 
         return(
             <div>
@@ -52,6 +52,9 @@ class Confirmation extends Component{
                     </List.Item>
                     <List.Item>
                         <List.Content>ageGroup: {ageGroup}</List.Content>
+                    </List.Item>
+                    <List.Item>
+                        <List.Content>kommun: {location}</List.Content>
                     </List.Item>
                 </List>
                 <br></br>

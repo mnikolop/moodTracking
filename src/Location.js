@@ -19,10 +19,10 @@ class Location extends Component {
         const { values } = this.props;
         return (
             <Form >
-                <h1 className="ui centered">Ange din plats (region)</h1>
+                <h1 className="ui centered">Ange din plats (kommun)</h1>
                 <Form.Field >
                     <input
-                        placeholder='Region'
+                        placeholder='kommun'
                         onChange={this.props.handleChange('location')}
                         defaultValue={values.location}
                     />

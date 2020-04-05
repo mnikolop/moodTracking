@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { List } from 'semantic-ui-react';
 import Button from 'react-bootstrap/Button';
 import './resources/Form.css'
+import firebase from './firebase'
 
 class Confirmation extends Component{
     saveAndContinue = (e) => {
@@ -19,9 +20,41 @@ class Confirmation extends Component{
       this.props.toStep();
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const itemsRef = firebase.database().ref('responces');
+    
+    const item = this.props.values;
+
+    itemsRef.push(item);
+    this.setState({
+      temperature: '',
+      cough: '',
+      breathing: '',
+      energy: '',
+      contact: '',
+      atRisk: '',
+      immune: '',
+      ageGroup: '',
+      location: ''
+    });
+    this.props.nextStep();
+  }
 
     render(){
         const {values: { temperature, cough, breathing, energy, contact, atRisk, immune, ageGroup, location }} = this.props;
+
+        // const item = {
+        //   temperature: {temperature}, 
+        //   cough: {cough}, 
+        //   breathing: {breathing}, 
+        //   energy: {energy}, 
+        //   contact: {contact}, 
+        //   atRisk: {atRisk}, 
+        //   immune: {immune}, 
+        //   ageGroup: {ageGroup}, 
+        //   location: {location}
+        // }
 
         return(
             <div>
@@ -58,7 +91,7 @@ class Confirmation extends Component{
                     </List.Item>
                 </List>
                 <br></br>
-                <Button onClick={this.saveAndContinue}>Confirm</Button>
+                <Button onClick={this.handleSubmit}>Confirm</Button>
                 <br></br>
                 {/* <Button onClick={this.back}>Back</Button> TODO: Fix this! */}
             </div>

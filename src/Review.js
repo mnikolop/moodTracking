@@ -1,60 +1,66 @@
-import React from "react";
+import React, {Component} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { List } from 'semantic-ui-react';
+import Button from 'react-bootstrap/Button';
+import './resources/Form.css'
 
-const Review = ({ setForm, formData, navigation }) => {
-  const {
-    firstName,
-    lastName,
-    nickName,
-    address,
-    city,
-    state,
-    zip,
-    phone,
-    email
-  } = formData;
-  const { go } = navigation;
+class Confirmation extends Component{
+    saveAndContinue = (e) => {
+        e.preventDefault();
+        this.props.nextStep();
+    }
 
-  return (
-    <div className="form">
-      <h3>Review your data</h3>
-      <h4>
-        Name
-        <button onClick={() => go("names")}>Edit</button>
-      </h4>
-      <div>
-        {" "}
-        First name: {`${firstName}`},
-        <br />
-        Last Name: {`${lastName}`},
-      </div>
-      <div>Nick Name: {`${nickName}`}</div>
-      <h4>
-        Address
-        <button onClick={() => go("address")}>Edit</button>
-      </h4>
-      <div>
-        Address: {`${address}`},
-        <br />
-        City: {` ${city}`},
-        <br />
-        State: {`${state}`},
-        <br />
-        ZIP: {`${zip}`}
-      </div>
-      <h4>
-        Contact
-        <button onClick={() => go("contact")}>Edit</button>
-      </h4>
-      <div>
-        Phone: {`${phone}`},
-        <br />
-        E-mail: {`${email}`}
-      </div>
-      <div>
-        <button onClick={() => go("submit")}>Submit</button>
-      </div>
-    </div>
-  );
-};
+    back  = (e) => {
+        // e.preventDefault();
+        this.props.prevStep();
+    }
 
-export default Review;
+    toStep  = (e) => {
+      this.props.toStep();
+  }
+
+
+    render(){
+        const {values: { temperature, cough, breathing, energy, contact, atRisk, immune, ageGroup }} = this.props;
+
+        return(
+            <div>
+                <h1 className="ui centered">Confirm your Details</h1>
+                <p>Click Confirm if the following details have been correctly entered</p>
+                <List>
+                    <List.Item>
+                        <List.Content>temperature: {temperature}</List.Content> {/* {' '} <Button onClick={this.toStep}>Back</Button> */}
+                    </List.Item>
+                    <List.Item>
+                        <List.Content>cough: {cough}</List.Content> {/*  {' '} <Button onClick={this.toStep}>Back</Button> */}
+                    </List.Item>
+                    <List.Item>
+                        <List.Content>Breathing: {breathing}
+                        </List.Content>
+                    </List.Item>
+                    <List.Item>
+                        <List.Content>Energy: {energy}</List.Content>
+                    </List.Item>
+                    <List.Item>
+                        <List.Content>contact: {contact}</List.Content>
+                    </List.Item>
+                    <List.Item>
+                        <List.Content>atRisk: {atRisk}</List.Content>
+                    </List.Item>
+                    <List.Item>
+                        <List.Content>immune: {immune}</List.Content>
+                    </List.Item>
+                    <List.Item>
+                        <List.Content>ageGroup: {ageGroup}</List.Content>
+                    </List.Item>
+                </List>
+                <br></br>
+                <Button onClick={this.saveAndContinue}>Confirm</Button>
+                <br></br>
+                {/* <Button onClick={this.back}>Back</Button> TODO: Fix this! */}
+            </div>
+        )
+    }
+}
+
+export default Confirmation;

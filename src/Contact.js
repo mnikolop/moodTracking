@@ -1,23 +1,42 @@
-import React from "react";
+import React, {Component} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Form } from 'semantic-ui-react';
+import Button from 'react-bootstrap/Button';
+import './resources/Form.css'
 
-import ItemForm from "./ItemForm";
+class Contact extends Component{
 
-const Contact = ({ setForm, formData, navigation }) => {
-  const { phone, email } = formData;
+  saveAndContinue = (e) => {
+      e.preventDefault()
+      this.props.nextStep()
+  }
 
-  const { previous, next } = navigation;
+  back  = (e) => {
+    e.preventDefault();
+    this.props.prevStep();
+}
 
-  return (
-    <div className="form">
-      <h3>Contact </h3>
-      <ItemForm label="Phone" name="phone" value={phone} onChange={setForm} />
-      <ItemForm label="E-mail" name="email" value={email} onChange={setForm} />
-      <div>
-        <button onClick={previous}>Previous</button>
-        <button onClick={next}>Next</button>
-      </div>
-    </div>
-  );
-};
+  render(){
+      const { values } = this.props;
+      return(
+          <Form >
+              <h1 className="ui centered">Har du haft nära kontakt med någon som är smittad med coronavirus (covid-19)?</h1>
+              <Form.Dropdown value={values.contact} onChange={this.props.handleChange('contact')}>
+                <select >
+                  <option value="--">--</option>
+                  <option value="no">Nej</option>
+                  <option value="yes">Ja</option>
+                  <option value="DoNotKnow">Vet ej</option>
+                </select>
+              </Form.Dropdown>
+              <br></br>
+            <Button onClick={this.saveAndContinue}>Save And Continue </Button>
+            <br></br>
+            <Button onClick={this.back}>Back</Button>
+            
+          </Form>
+      )
+  }
+}
 
 export default Contact;

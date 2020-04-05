@@ -2,10 +2,10 @@ import React from 'react';
 import {Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import logo from './logo.svg';
-import './styles/App.css';
+import logo from './resources/logo.svg';
+import './resources/App.css';
 
-
+// TODO move all teh questions and answers to a file that they feed dropdowns
 
 function App() {
   return (

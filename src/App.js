@@ -2,7 +2,6 @@ import React from 'react';
 import {Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Alert} from 'react-bootstrap';
-import logo from './resources/logo.svg';
 import './resources/App.css';
 
 // TODO move all teh questions and answers to a file that they feed dropdowns
@@ -21,7 +20,6 @@ function App() {
           </p>
           <Alert variant='danger'> If you are feeling sick contact your doctor, 1177, <a href='https://1177.se/'>1177.se</a> or do the self exam at <a href='https://corona.sll.se/'>corona.sll.se</a>. </Alert>
         </div>
-        <img src={ require('./report.png') } />
           <Link to="/form">
             <Button variant="primary">Add your own data here!</Button>
           </Link>

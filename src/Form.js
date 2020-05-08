@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'semantic-ui-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainForm from "./MainForm";
-import './resources/Form.css'
+import './resources/styles/Form.css'
 
 
 function Form() {

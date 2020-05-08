@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form } from 'semantic-ui-react';
 import Button from 'react-bootstrap/Button';
-import './resources/Form.css'
+import './resources/styles/Form.css'
 
 class AgeGroup extends Component{
 

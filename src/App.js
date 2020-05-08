@@ -2,7 +2,7 @@ import React from 'react';
 import {Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Alert} from 'react-bootstrap';
-import './resources/App.css';
+import './resources/styles/App.css';
 
 // TODO move all teh questions and answers to a file that they feed dropdowns
 

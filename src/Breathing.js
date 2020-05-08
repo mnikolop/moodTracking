@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Alert from 'react-bootstrap/Alert';
 import { Form } from 'semantic-ui-react';
 import Button from 'react-bootstrap/Button';
-import './resources/Form.css'
+import './resources/styles/Form.css'
 
 class Breathing extends Component{
 

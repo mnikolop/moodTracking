@@ -13,7 +13,7 @@ import AgeGroup from "./AgeGroup"
 import Location from "./Location"
 
 
-import "./resources/Form.css";
+import "./resources/styles/Form.css";
 
 class MainForm extends Component {
   state = {

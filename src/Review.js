@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { List } from 'semantic-ui-react';
 import Button from 'react-bootstrap/Button';
-import './resources/Form.css'
+import './resources/styles/Form.css'
 import firebase from './firebase'
 
 class Confirmation extends Component{

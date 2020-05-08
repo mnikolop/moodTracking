@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { List } from 'semantic-ui-react';
 import Button from 'react-bootstrap/Button';
 import './resources/styles/Form.css'
-import firebase from './firebase'
+import firebase from './resources/firebase'
 
 class Confirmation extends Component{
     saveAndContinue = (e) => {

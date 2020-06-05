@@ -1,14 +1,15 @@
-# Mood Tracker
-Project for tracking mood and graphing it.
+# Tutorial branch
 
-## Versions, current dev state and future
+This branch is created for the code club every thursday.
+It is intended to be worked towards it meeting the master.
 
-0.0.0 - Development phase.
+# Installing dependencies
 
-## Built with
+## Installing React
 
-- [React](https://nodejs.org/) (Runtime environment)
-- [NPM v6.4.1](https://www.npmjs.com/) (Node package manager)
-- [Bootstrap v4.3.1](http://getbootstrap.com) (CSS framework)
-- [Firebase ]() (Database and hosting environment)
+`npm i react`  
+`npm i react-dom`
 
+## Create app
+
+`npx create-react-app moodTracking`

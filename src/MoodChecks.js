@@ -2,52 +2,55 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import "./resources/styles/Form.css";
-import { makeStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
-import Box from "@material-ui/core/Box";
 
 const labels = {
-  0.5: "Useless",
-  1: "Useless+",
-  1.5: "Poor",
-  2: "Poor+",
-  2.5: "Ok",
-  3: "Ok+",
-  3.5: "Good",
-  4: "Good+",
-  4.5: "Excellent",
-  5: "Excellent+",
+  0.5: "0.5",
+  1: "1",
+  1.5: "1.5",
+  2: "2",
+  2.5: "2.5",
+  3: "3",
+  3.5: "3.5",
+  4: "4",
+  4.5: "4.5",
+  5: "5",
 };
 
-const useStyles = makeStyles({
-  root: {
-    width: 200,
-    display: "flex",
-    alignItems: "center",
-  },
-});
+class MoodChecks extends Component {
+  saveAndContinue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
 
-export default function MoodChecks() {
-  const [value, setValue] = React.useState(2);
-  const [hover, setHover] = React.useState(-1);
-  const classes = useStyles();
+  back = (e) => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
 
-  return (
-    <div className={classes.root}>
-      <Rating
-        name="hover-feedback"
-        value={value}
-        precision={0.5}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-        onChangeActive={(event, newHover) => {
-          setHover(newHover);
-        }}
-      />
-      {value !== null && (
-        <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>
-      )}
-    </div>
-  );
+  render() {
+    const { values } = this.props;
+    return (
+      <div>
+        <h3>Energy:</h3>
+        <Rating
+          name="simple-controlled"
+          value={values.energy}
+          onChange={this.props.handleChange("energy")}
+        />
+        <br></br>
+        <Rating
+          name="simple-controlled"
+          value={values.eating}
+          onChange={this.props.handleChange("eating")}
+        />
+        <br></br>
+        <Button onClick={this.saveAndContinue}>Save And Continue </Button>
+        <br></br>
+        <Button onClick={this.back}>Back</Button>
+      </div>
+    );
+  }
 }
+
+export default MoodChecks;

@@ -13,3 +13,4 @@ It is intended to be worked towards it meeting the master.
 ## Create app
 
 `npx create-react-app moodTracking`
+`npm i @material-ui/icons`

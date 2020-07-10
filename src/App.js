@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "react-router-dom/Link";
+import {Link} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./resources/styles/App.css";
 import SpeedDial from "@material-ui/lab/SpeedDial";

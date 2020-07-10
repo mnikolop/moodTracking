@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import './resources/styles/Form.css'

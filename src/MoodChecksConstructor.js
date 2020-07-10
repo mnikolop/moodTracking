@@ -30,13 +30,6 @@ class MoodChecksConstructor extends Component {
     });
   };
 
-  toStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step,
-    });
-  };
-
   handleChange = (input) => (event) => {
     this.setState({ [input]: event.target.value });
   };
@@ -80,8 +73,8 @@ class MoodChecksConstructor extends Component {
             values={values}
           />
         );
-      case 4:
-        return <Success/>;
+      case 3:
+        return <Success />;
     }
   }
 }

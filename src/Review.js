@@ -28,33 +28,18 @@ class Confirmation extends Component{
 
     itemsRef.push(item);
     this.setState({
-      temperature: '',
-      cough: '',
-      breathing: '',
-      energy: '',
-      contact: '',
-      atRisk: '',
-      immune: '',
-      ageGroup: '',
-      location: ''
+        suspension: " ",
+        sleep: " ",
+        eating: " ",
+        focusing: " ",
+        energy: " "
     });
     this.props.nextStep();
   }
 
     render(){
-        const {values: { temperature, cough, breathing, energy, contact, atRisk, immune, ageGroup, location }} = this.props;
+        const {values: { suspension, sleep, eating, focusing, energy }} = this.props;
 
-        // const item = {
-        //   temperature: {temperature}, 
-        //   cough: {cough}, 
-        //   breathing: {breathing}, 
-        //   energy: {energy}, 
-        //   contact: {contact}, 
-        //   atRisk: {atRisk}, 
-        //   immune: {immune}, 
-        //   ageGroup: {ageGroup}, 
-        //   location: {location}
-        // }
 
         return(
             <div>
@@ -62,32 +47,20 @@ class Confirmation extends Component{
                 <p>Click Confirm if the following details have been correctly entered</p>
                 <List>
                     <List.Item>
-                        <List.Content>temperature: {temperature}</List.Content> {/* {' '} <Button onClick={this.toStep}>Back</Button> */}
+                        <List.Content>suspension: {suspension}</List.Content>
                     </List.Item>
                     <List.Item>
-                        <List.Content>cough: {cough}</List.Content> {/*  {' '} <Button onClick={this.toStep}>Back</Button> */}
+                        <List.Content>sleep: {sleep}</List.Content> 
                     </List.Item>
                     <List.Item>
-                        <List.Content>Breathing: {breathing}
+                        <List.Content>eating: {eating}
                         </List.Content>
                     </List.Item>
                     <List.Item>
-                        <List.Content>Energy: {energy}</List.Content>
+                        <List.Content>focusing: {focusing}</List.Content>
                     </List.Item>
                     <List.Item>
-                        <List.Content>contact: {contact}</List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>atRisk: {atRisk}</List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>immune: {immune}</List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>ageGroup: {ageGroup}</List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>kommun: {location}</List.Content>
+                        <List.Content>energy: {energy}</List.Content>
                     </List.Item>
                 </List>
                 <br></br>

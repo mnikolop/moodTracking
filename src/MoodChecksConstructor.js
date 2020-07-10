@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 
 import MoodChecks from "./MoodChecks";
-import FeelingEntry from "./FeelingEntry";
 import Review from "./Review";
 import Success from "./Success";
 
 import "./resources/styles/Form.css";
 
-class MainForm extends Component {
+class MoodChecksConstructor extends Component {
   state = {
     step: 1,
     suspension: "NA",
     sleep: "NA",
     eating: "NA",
     focusing: "NA",
-    energy: "NA",
-    feelingEntry: "NA",
+    energy: "NA"
   };
 
   nextStep = () => {
@@ -38,6 +36,7 @@ class MainForm extends Component {
       step: step,
     });
   };
+
   handleChange = (input) => (event) => {
     this.setState({ [input]: event.target.value });
   };
@@ -53,16 +52,14 @@ class MainForm extends Component {
       sleep,
       eating,
       focusing,
-      energy,
-      feelingEntry,
+      energy
     } = this.state;
     const values = {
       suspension,
       sleep,
       eating,
       focusing,
-      energy,
-      feelingEntry,
+      energy
     };
     switch (step) {
       case 1:
@@ -76,16 +73,6 @@ class MainForm extends Component {
         );
       case 2:
         return (
-          <FeelingEntry
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            toStep={this.toStep}
-            values={values}
-          />
-        );
-      case 3:
-        return (
           <Review
             nextStep={this.nextStep}
             prevStep={this.prevStep}
@@ -94,8 +81,8 @@ class MainForm extends Component {
           />
         );
       case 4:
-        return <Success />;
+        return <Success/>;
     }
   }
 }
-export default MainForm;
+export default MoodChecksConstructor;

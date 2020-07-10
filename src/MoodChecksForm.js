@@ -1,22 +1,20 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MainForm from "./MainForm";
+import MoodChecksConstructor from "./MoodChecksConstructor";
 import './resources/styles/Form.css'
 
 
-function Form() {
+function MoodChecksForm() {
     return (
-      <div className="form">
+      <div className="moodChecksForm">
         <div className="wrapper">
         <Container textAlign='center'>
-          <MainForm />
+          <MoodChecksConstructor/>
         </Container>
         </div>
       </div>
     );
 }
   
-  export default Form;
-
-  
+  export default MoodChecksForm;

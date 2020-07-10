@@ -1,13 +1,10 @@
 import React from "react";
 import Link from "react-router-dom/Link";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
 import "./resources/styles/App.css";
-import Backdrop from "@material-ui/core/Backdrop";
 import SpeedDial from "@material-ui/lab/SpeedDial";
 import SpeedDialIcon from "@material-ui/lab/SpeedDialIcon";
 import SpeedDialAction from "@material-ui/lab/SpeedDialAction";
-import FileCopyIcon from "@material-ui/icons/FileCopyOutlined";
 import SaveIcon from "@material-ui/icons/Save";
 import PrintIcon from "@material-ui/icons/Print";
 import ShareIcon from "@material-ui/icons/Share";
@@ -31,11 +28,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const actions = [
-  { icon: <FileCopyIcon />, name: "Copy" },
+  { icon: (<Link to="/moodChecksForm"><FavoriteIcon /></Link>),name: "Emotions" },
   { icon: <SaveIcon />, name: "Save" },
   { icon: <PrintIcon />, name: "Print" },
-  { icon: <ShareIcon />, name: "Share" },
-  { icon: <FavoriteIcon />, name: "Like" },
+  { icon: <ShareIcon />, name: "Share" }
 ];
 
 function App() {
@@ -59,10 +55,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={"./resources/graph.png"} className="Graph" alt="graph"></img>
-        <br></br>
-        <Link to="/form">
-          <Button variant="primary">New Entry</Button>
-        </Link>
       </header>
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"

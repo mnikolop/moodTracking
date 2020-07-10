@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import "./resources/styles/Form.css";
 import Rating from "@material-ui/lab/Rating";
+import Typography from '@material-ui/core/Typography';
+import "./resources/styles/Form.css";
 
 const labels = {
   0.5: "0.5",
@@ -32,22 +34,41 @@ class MoodChecks extends Component {
     const { values } = this.props;
     return (
       <div>
-        <h3>Energy:</h3>
+        <Typography component="legend">Suspension</Typography>
         <Rating
-          name="simple-controlled"
-          value={values.energy}
-          onChange={this.props.handleChange("energy")}
+          value={values.suspension}
+          onChange={this.props.handleChange("suspension")}
         />
         <br></br>
+        <Typography component="legend">Sleep</Typography>
+        <Rating
+          value={values.sleep}
+          onChange={this.props.handleChange("sleep")}
+        />
+        <br></br>
+        <Typography component="legend">Eating</Typography>
         <Rating
           name="simple-controlled"
           value={values.eating}
           onChange={this.props.handleChange("eating")}
         />
         <br></br>
-        <Button onClick={this.saveAndContinue}>Save And Continue </Button>
+        <Typography component="legend">Focusing</Typography>
+        <Rating
+          name="simple-controlled"
+          value={values.focusing}
+          onChange={this.props.handleChange("focusing")}
+        />
         <br></br>
-        <Button onClick={this.back}>Back</Button>
+        <Typography component="legend">Energy</Typography>
+        <Rating
+          name="simple-controlled"
+          value={values.energy}
+          onChange={this.props.handleChange("energy")}
+        />
+        <br></br>
+        <Button variant="primary" onClick={this.saveAndContinue}>Save And Continue </Button>{' '}
+        <Button variant="link" onClick={this.back}>Cancel</Button>
       </div>
     );
   }

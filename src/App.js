@@ -5,14 +5,11 @@ import "./resources/styles/App.css";
 import SpeedDial from "@material-ui/lab/SpeedDial";
 import SpeedDialIcon from "@material-ui/lab/SpeedDialIcon";
 import SpeedDialAction from "@material-ui/lab/SpeedDialAction";
-import SaveIcon from "@material-ui/icons/Save";
-import PrintIcon from "@material-ui/icons/Print";
-import ShareIcon from "@material-ui/icons/Share";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import TextFieldsIcon from '@material-ui/icons/TextFields';
+import VoicemailIcon from '@material-ui/icons/Voicemail';
 import { makeStyles } from "@material-ui/core/styles";
 
-// TODO make button into speeddial with mood/text/sound/image options
-// TODO make review dialog with accept option
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,20 +25,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const actions = [
-  { icon: (<Link to="/moodChecksForm"><FavoriteIcon /></Link>),name: "Emotions" },
-  { icon: <SaveIcon />, name: "Save" },
-  { icon: <PrintIcon />, name: "Print" },
-  { icon: <ShareIcon />, name: "Share" }
+  { icon: (<Link to="/moodChecksForm"><FavoriteIcon /></Link>), name: "Emotions" },
+  { icon: (<Link to="/journalEntryForm"><TextFieldsIcon /></Link>), name: "Journal" },
+  { icon: (<Link to="/voiceEntryForm"><VoicemailIcon /></Link>), name: "Recording" }
 ];
 
 function App() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [hidden, setHidden] = React.useState(false);
 
-  const handleVisibility = () => {
-    setHidden((prevHidden) => !prevHidden);
-  };
+  
 
   const handleOpen = () => {
     setOpen(true);
@@ -59,7 +52,6 @@ function App() {
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         className={classes.speedDial}
-        hidden={hidden}
         icon={<SpeedDialIcon />}
         onClose={handleClose}
         onOpen={handleOpen}

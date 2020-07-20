@@ -6,6 +6,7 @@ import Rating from "@material-ui/lab/Rating";
 import Typography from '@material-ui/core/Typography';
 import "./resources/styles/Form.css";
 import { withStyles } from '@material-ui/core/styles';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import WavesIcon from '@material-ui/icons/Waves';
 import NightsStayIcon from '@material-ui/icons/NightsStay';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
@@ -57,9 +58,20 @@ const Energy = withStyles({
   },
 })(Rating)
 
+const labels = {
+  0.5: "0.5",
+  1: "1",
+  1.5: "1.5",
+  2: "2",
+  2.5: "2.5",
+  3: "3",
+  3.5: "3.5",
+  4: "4",
+  4.5: "4.5",
+  5: "5",
+};
 
-
-class MoodChecks extends Component {
+class VoiceEntry extends Component {
   saveAndContinue = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -126,4 +138,4 @@ class MoodChecks extends Component {
   }
 }
 
-export default MoodChecks;
+export default VoiceEntry;

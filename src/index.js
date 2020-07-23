@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './resources/styles/index.css';
 import App from './App';
-import Form from './MoodChecksForm';
+import MoodChecksForm from './MoodChecksForm';
+import JournalEntryForm from './JournalEntryForm';
 import * as serviceWorker from './resources/serviceWorker';
 
 const rootElement = document.getElementById("root");
@@ -11,7 +12,8 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={App} />
-      <Route path="/MoodChecksForm" component={Form} />
+      <Route path="/MoodChecksForm" component={MoodChecksForm} />
+      <Route path="/JournalEntryForm" component={JournalEntryForm} />
     </Switch>
   </BrowserRouter>,
   rootElement

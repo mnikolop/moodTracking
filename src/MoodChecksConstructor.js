@@ -30,9 +30,6 @@ class MoodChecksConstructor extends Component {
     });
   };
 
-  handleChange = (input) => (event) => {
-    this.setState({ [input]: event.target.value });
-  };
 
   handleChange = (input) => (event) => {
     this.setState({ [input]: event.target.value });
@@ -54,6 +51,7 @@ class MoodChecksConstructor extends Component {
       focusing,
       energy
     };
+
     switch (step) {
       case 1:
         return (
@@ -74,7 +72,7 @@ class MoodChecksConstructor extends Component {
           />
         );
       case 3:
-        return <Success />;
+        return (<Success />);
     }
   }
 }

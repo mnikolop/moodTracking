@@ -9,7 +9,7 @@ import "./resources/styles/Form.css";
 class JournalEntryConstructor extends Component {
   state = {
     step: 1,
-    entry: "NA",
+    text: "NA",
     sentiment: "NA"
   };
 
@@ -31,30 +31,28 @@ class JournalEntryConstructor extends Component {
     this.setState({ [input]: event.target.value });
   };
 
-  handleChange = (input) => (event) => {
-    this.setState({ [input]: event.target.value });
-  };
-
   render() {
     const { step } = this.state;
     const {
-      entry,
+      text, 
       sentiment
     } = this.state;
     const values = {
-      entry,
+      text,
       sentiment
     };
+
     switch (step) {
       case 1:
         return (
           <JournalEntry
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-            values={values}
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          values={values}
           />
-        );
-      case 2:
+        )
+        case 2:
         return (
           <Review
             nextStep={this.nextStep}
@@ -63,8 +61,8 @@ class JournalEntryConstructor extends Component {
             values={values}
           />
         );
-      case 3:
-        return <Success />;
+        case 3:
+          return (<Success />);
     }
   }
 }

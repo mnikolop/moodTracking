@@ -10,7 +10,7 @@ class JournalEntryConstructor extends Component {
   state = {
     step: 1,
     text: "NA",
-    sentiment: "NA"
+    textSentiment: "NA",
   };
 
   nextStep = () => {
@@ -33,26 +33,23 @@ class JournalEntryConstructor extends Component {
 
   render() {
     const { step } = this.state;
-    const {
-      text, 
-      sentiment
-    } = this.state;
+    const { text, textSentiment } = this.state;
     const values = {
       text,
-      sentiment
+      textSentiment,
     };
 
     switch (step) {
       case 1:
         return (
           <JournalEntry
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          handleChange={this.handleChange}
-          values={values}
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
           />
-        )
-        case 2:
+        );
+      case 2:
         return (
           <Review
             nextStep={this.nextStep}
@@ -61,8 +58,8 @@ class JournalEntryConstructor extends Component {
             values={values}
           />
         );
-        case 3:
-          return (<Success />);
+      case 3:
+        return <Success />;
     }
   }
 }

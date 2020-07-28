@@ -84,6 +84,9 @@ class JournalEntry extends Component {
             rows={10}
             rowsMax={20}
             fullWidth
+            name="sleep"
+            value={values.text}
+            onChange={this.props.handleChange("text")}
           />
         </form>
         <br></br>
@@ -92,7 +95,9 @@ class JournalEntry extends Component {
           name="customized-icons"
           getLabelText={(value) => customIcons[value].label}
           IconContainerComponent={IconContainer}
-          id="icon"
+          name="textSentiment"
+          value={values.textSentiment}
+          onChange={this.props.handleChange("textDentiment")}
         />
         <br></br>
         <Button variant="primary" onClick={this.saveAndContinue}>

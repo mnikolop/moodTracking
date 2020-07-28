@@ -3,61 +3,59 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import "./resources/styles/Form.css";
 import Rating from "@material-ui/lab/Rating";
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography";
 import "./resources/styles/Form.css";
-import { withStyles } from '@material-ui/core/styles';
-import WavesIcon from '@material-ui/icons/Waves';
-import NightsStayIcon from '@material-ui/icons/NightsStay';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
-import TollIcon from '@material-ui/icons/Toll';
-import Battery60Icon from '@material-ui/icons/Battery60';
+import { withStyles } from "@material-ui/core/styles";
+import WavesIcon from "@material-ui/icons/Waves";
+import NightsStayIcon from "@material-ui/icons/NightsStay";
+import FastfoodIcon from "@material-ui/icons/Fastfood";
+import TollIcon from "@material-ui/icons/Toll";
+import Battery60Icon from "@material-ui/icons/Battery60";
 
 const Suspension = withStyles({
   iconFilled: {
-    color: '#ff6d75',
+    color: "#ff6d75",
   },
   iconHover: {
-    color: '#2b5e94',
+    color: "#2b5e94",
   },
-})(Rating)
+})(Rating);
 
 const Sleep = withStyles({
   iconFilled: {
-    color: '#ff6d75',
+    color: "#ff6d75",
   },
   iconHover: {
-    color: '#710aa8',
+    color: "#710aa8",
   },
-})(Rating)
+})(Rating);
 
 const Eating = withStyles({
   iconFilled: {
-    color: '#ff6d75',
+    color: "#ff6d75",
   },
   iconHover: {
-    color: '#a8470a',
+    color: "#a8470a",
   },
-})(Rating)
+})(Rating);
 
 const Focusing = withStyles({
   iconFilled: {
-    color: '#ff6d75',
+    color: "#ff6d75",
   },
   iconHover: {
-    color: '#dedede',
+    color: "#dedede",
   },
-})(Rating)
+})(Rating);
 
 const Energy = withStyles({
   iconFilled: {
-    color: '#ff6d75',
+    color: "#ff6d75",
   },
   iconHover: {
-    color: '#f70202',
+    color: "#f70202",
   },
-})(Rating)
-
-
+})(Rating);
 
 class MoodChecks extends Component {
   saveAndContinue = (e) => {
@@ -81,7 +79,7 @@ class MoodChecks extends Component {
           value={values.suspension}
           onChange={this.props.handleChange("suspension")}
           icon={<WavesIcon fontSize="inherit" />}
-          />
+        />
         <br></br>
         <Typography component="legend">Sleep</Typography>
         <Sleep
@@ -119,8 +117,12 @@ class MoodChecks extends Component {
           icon={<Battery60Icon fontSize="inherit" />}
         />
         <br></br>
-        <Button variant="primary" onClick={this.saveAndContinue}>Save And Continue </Button>{' '}
-        <Button variant="link" onClick={this.back}>Cancel</Button>
+        <Button variant="primary" onClick={this.saveAndContinue}>
+          Save And Continue{" "}
+        </Button>{" "}
+        <Button variant="link" onClick={this.back}>
+          Cancel
+        </Button>
       </div>
     );
   }

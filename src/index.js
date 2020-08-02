@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import './resources/styles/index.css';
-import App from './App';
-import MoodChecksForm from './MoodChecksForm';
-import JournalEntryForm from './JournalEntryForm';
-import * as serviceWorker from './resources/serviceWorker';
+import "./resources/styles/index.css";
+import App from "./App";
+import MoodChecksForm from "./MoodChecksForm";
+import JournalEntryForm from "./JournalEntryForm";
+import VoiceEntryForm from "./VoiceEntryForm";
+import * as serviceWorker from "./resources/serviceWorker";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
       <Route exact path="/" component={App} />
       <Route path="/MoodChecksForm" component={MoodChecksForm} />
       <Route path="/JournalEntryForm" component={JournalEntryForm} />
+      <Route path="/VoiceEntryForm" component={VoiceEntryForm} />
     </Switch>
   </BrowserRouter>,
   rootElement

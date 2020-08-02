@@ -90,14 +90,14 @@ class JournalEntry extends Component {
           />
         </form>
         <br></br>
-        <Typography component="legend">Custom icon set</Typography>
+        <Typography component="legend">Sentiment</Typography>
         <Rating
           name="customized-icons"
           getLabelText={(value) => customIcons[value].label}
           IconContainerComponent={IconContainer}
           name="textSentiment"
           value={values.textSentiment}
-          onChange={this.props.handleChange("textDentiment")}
+          onChange={this.props.handleChange("textSentiment")}
         />
         <br></br>
         <Button variant="primary" onClick={this.saveAndContinue}>

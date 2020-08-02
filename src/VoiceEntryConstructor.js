@@ -9,11 +9,8 @@ import "./resources/styles/Form.css";
 class VoiceEntryConstructor extends Component {
   state = {
     step: 1,
-    suspension: "NA",
-    sleep: "NA",
-    eating: "NA",
-    focusing: "NA",
-    energy: "NA"
+    voice: "NA",
+    voiceSentiment: "NA",
   };
 
   nextStep = () => {
@@ -34,33 +31,21 @@ class VoiceEntryConstructor extends Component {
     this.setState({ [input]: event.target.value });
   };
 
-  handleChange = (input) => (event) => {
-    this.setState({ [input]: event.target.value });
-  };
-
   render() {
     const { step } = this.state;
-    const {
-      suspension,
-      sleep,
-      eating,
-      focusing,
-      energy
-    } = this.state;
+    const { voice, voiceSentiment } = this.state;
     const values = {
-      suspension,
-      sleep,
-      eating,
-      focusing,
-      energy
+      voice,
+      voiceSentiment,
     };
+
     switch (step) {
       case 1:
         return (
           <VoiceEntry
             nextStep={this.nextStep}
+            prevStep={this.prevStep}
             handleChange={this.handleChange}
-            toStep={this.toStep}
             values={values}
           />
         );
